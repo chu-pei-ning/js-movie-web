@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies & TV shows</title>
+  <link rel="icon" type="img/icon" href="../img/watching-a-movie.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="sticky">
+    <div class="home-header">
+      <div class="link">
+        <a href="#top">Home</a>
+        <a href="./about.html">About</a>  
+      </div>
+      <div class="checkbox-wrapper-5">
+        <div class="check">
+          <input id="check-5" type="checkbox">
+          <label for="check-5"></label>
+        </div>
+      </div>   
+    </div>
+    <div>
+      <form id="search">
+        <div class="search-box">
+          <input class="search-query" type="text" placeholder="Search..." required />
+          <button type="submit" class="search-icon" id="search-button">
+            <img src="../img/search.png" class="search-icon">
+          </button>
+        </div>
+      </form>  
+      <section class="switch-tab">
+        <h2 class="movie-tab">Movies</h2>
+        <h2 class="tv-tab">TV shows</h2>  
+      </section> 
+    </div>  
+  </header>
+  <main id="top">
+    <section class="movie">
+      <h3 id="movie-h3">Movies</h3>
+      <div class="movie-items">
+        <!-- js產生 -->
+      </div>
+      <!-- 點選圖片後產生的框 -->
+      <dialog class="dialog" id="movie-dialog">
+        <div id="movie-dialog-content"></div>
+        <div class="leave-btn">
+          <button class="btn" id="leave-m-btn">Leave</button>
+        </div>
+      </dialog>
+      <div id="see-more-movie">
+        <button class="btn previous-btn" id="prev-movie">Previous page</button>
+        <span id="curr-movie-page">1</span>
+        <button class="btn next-btn" id="next-movie">Next page</button>      
+      </div>
+    </section>
+    <section class="tv">
+      <h3 id="tv-h3">TV shows</h3>
+      <div class="tv-items">
+        <!-- js產生 -->
+      </div>
+      <!-- 點選圖片後產生的框 -->
+      <dialog class="dialog" id="tv-dialog">
+        <div id="tv-dialog-content"></div>
+        <div class="leave-btn">
+          <button class="btn" id="leave-tv-btn">Leave</button>
+        </div>
+      </dialog>      
+      <div id="see-more-tv">
+        <button class="btn previous-btn" id="prev-tv">Previous page</button>
+        <span id="curr-tv-page">1</span>
+        <button class="btn next-btn" id="next-tv">Next page</button>      
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Julia. All rights reserved.</p>
+  </footer>
+  <script src="../js/script.js"></script>
+  <script src="../js/change_style.js"></script>
+  <script src="../js/search.js"></script>
+</body>
+</html>

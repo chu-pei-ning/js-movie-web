@@ -1,0 +1,348 @@
+@media only screen and (max-width: 480px){
+  * {
+    box-sizing: border-box;
+  }
+  .dis-none {
+    display: none;
+  }
+  
+  body {
+    background-color: rgb(50, 50, 50);
+    color: white;
+
+    .sticky {
+      background-color: rgb(50, 50, 50);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+
+      .home-header {
+        width: 100%;
+        padding: 25px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        background-color: black;
+        font-size: 1.2em;
+  
+        .link {
+          display: flex;
+          gap: 20px;
+  
+          a {
+            text-decoration: none;
+            color: white;
+            font-family: "Open Sans", sans-serif;
+            text-transform: uppercase;      
+          }
+  
+          a:hover {
+            color: gray;
+            font-weight: 900;
+          }
+        }  
+      }
+  
+      .search-box {
+        position: relative; /* 父層設定 relative，讓子層可以絕對定位 */
+        padding: 20px 5px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      
+        .search-query {
+          height: 40px;
+          border-radius: 20px;
+          width: 100%;
+          padding: 0 50px 0 15px; /* 增加右側空間讓按鈕不遮住文字 */
+          border: 1px solid #ccc;
+          outline: none;
+        }
+
+        .search-query:focus {
+          border-color: gray;
+          box-shadow: 0 0 5px #b2b0b0;
+        }
+      
+        .search-icon {
+          position: absolute;
+          right: 10px; /* 控制按鈕在右側的位置 */
+          top: 50%; 
+          transform: translateY(-50%); /* 使按鈕垂直居中 */
+          background: none;
+          border: none;
+          cursor: pointer;
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          opacity: 0.6;
+        }    
+      }
+  
+      .switch-tab {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+  
+        .movie-tab, .tv-tab {
+          margin: 5px;
+          font-family: "Open Sans", sans-serif;
+          text-transform: uppercase;      
+        }
+  
+        .movie-tab:hover, .tv-tab:hover {
+          border-bottom: 2px solid white;
+          text-align: center;
+        }
+      }  
+    }
+
+    #movie-h3, #tv-h3 {
+      margin: 0;
+      padding: 10px 5px;
+    }
+
+    .movie-items, .tv-items, .items {
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* 自動適應寬度 */
+      gap: 20px;
+    }
+
+    .movie-list, .tv-list {
+      margin: 0 auto; /* 確保內容居中 */
+      width: 100%; /* 容器寬度限制 */
+      list-style: none;
+      text-align: left;
+    }
+
+    .movie-img, .tv-img, .img {
+      max-width: 100%; /* 確保圖片自適應容器寬度 */
+      border-radius: 15px;
+      display: block; /* 移除圖片的下方間隙 */
+    }
+
+    .movie-img:hover, .tv-img:hover {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .movie-title, .tv-title, .title {
+      max-width: 100%; 
+      white-space: nowrap; /* 禁止文字換行 */
+      overflow: hidden; /* 隱藏超出的文字 */
+      text-overflow: ellipsis; /* 使用省略號 */
+    }
+
+    .movie-date, .tv-date {
+      margin: 0;
+    }
+
+    .dialog {
+      position: fixed;
+      border: none;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background-color: rgb(0, 0, 0, 90%);
+      color: white;
+      width: 100%;
+
+      .m-img, .t-img {
+        width: 100%;
+      }
+
+      .leave-btn {
+        text-align: center;
+        padding: 40px;
+
+        #leave-m-btn, #leave-tv-btn {
+          width: 120px;
+          border-radius: 0;
+        }  
+      }
+    }
+    
+    #see-more-movie, #see-more-tv {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px 0 40px 0;
+
+      .btn {
+        width: 130px;
+        height: 40px;
+      }
+    }
+
+    .btn {
+      font-family: "Open Sans", sans-serif;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: white;
+      background-color: black;
+      cursor: pointer;
+      border: 3px solid white;
+      border-radius: 8px;
+      padding: 0.25em 0.5em;
+      box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    
+    .btn:active {
+      box-shadow: 0px 0px 0px 0px;
+      top: 5px;
+      left: 5px;
+    }
+  }
+
+  // 點選按鈕改light style
+  .light-theme {
+    background-color:white;
+    color: black;
+
+    .sticky {
+      background-color: white;
+
+      .home-header {
+        color: black;
+        background-color: #ffe9ef;
+  
+        .link {
+          a {
+            color: black;
+          }    
+        }
+      }
+      .search-box {
+        .search-query {
+          outline: none; /* 移除預設的藍色框線 */
+        }
+  
+        .search-query:focus  {
+          border-color: #ffe9ef;
+          box-shadow: 0 0 5px #f099b5; /* 添加一點陰影效果 */
+        }  
+      }
+      
+      .switch-tab {
+        .movie-tab:hover, .tv-tab:hover {
+          border-bottom: 2px solid black;
+        }
+      }
+    }
+
+
+    .dialog {
+      color: black;
+      background-color: rgb(255, 255, 255, 95%);
+    }
+
+    .btn {
+      color: rgb(80, 80, 80);
+      background-color: white;
+      border: 3px solid #f099b5;
+    }
+  }
+
+  // check box樣式 
+  .checkbox-wrapper-5 .check {
+    --size: 30px;
+
+    position: relative;
+    background: linear-gradient(90deg, #f19af3, #f099b5);
+    line-height: 0;
+    perspective: 400px;
+    font-size: var(--size);
+  }
+
+  .checkbox-wrapper-5 .check input[type="checkbox"],
+  .checkbox-wrapper-5 .check label,
+  .checkbox-wrapper-5 .check label::before,
+  .checkbox-wrapper-5 .check label::after,
+  .checkbox-wrapper-5 .check {
+    appearance: none;
+    display: inline-block;
+    border-radius: var(--size);
+    border: 0;
+    transition: .35s ease-in-out;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .checkbox-wrapper-5 .check label {
+    width: calc(2.2 * var(--size));
+    height: var(--size);
+    background: #d7d7d7;
+    overflow: hidden;
+  }
+
+  .checkbox-wrapper-5 .check input[type="checkbox"] {
+    position: absolute;
+    z-index: 1;
+    width: calc(.8 * var(--size));
+    height: calc(.8 * var(--size));
+    top: calc(.1 * var(--size));
+    left: calc(.1 * var(--size));
+    background: linear-gradient(45deg, #dedede, #ffffff);
+    box-shadow: 0 6px 7px rgba(0,0,0,0.3);
+    outline: none;
+    margin: 0;
+  }
+
+  .checkbox-wrapper-5 .check input[type="checkbox"]:checked {
+    left: calc(1.3 * var(--size));
+  }
+
+  .checkbox-wrapper-5 .check input[type="checkbox"]:checked + label {
+    background: transparent;
+  }
+
+  .checkbox-wrapper-5 .check label::before,
+  .checkbox-wrapper-5 .check label::after {
+    content: "· ·";
+    position: absolute;
+    overflow: hidden;
+    left: calc(.15 * var(--size));
+    top: calc(.5 * var(--size));
+    height: var(--size);
+    letter-spacing: calc(-0.04 * var(--size));
+    color: #9b9b9b;
+    font-family: "Times New Roman", serif;
+    z-index: 2;
+    font-size: calc(.6 * var(--size));
+    border-radius: 0;
+    transform-origin: 0 0 calc(-0.5 * var(--size));
+    backface-visibility: hidden;
+  }
+
+  .checkbox-wrapper-5 .check label::after {
+    content: "●";
+    top: calc(.65 * var(--size));
+    left: calc(.2 * var(--size));
+    height: calc(.1 * var(--size));
+    width: calc(.35 * var(--size));
+    font-size: calc(.2 * var(--size));
+    transform-origin: 0 0 calc(-0.4 * var(--size));
+  }
+
+  .checkbox-wrapper-5 .check input[type="checkbox"]:checked + label::before,
+  .checkbox-wrapper-5 .check input[type="checkbox"]:checked + label::after {
+    left: calc(1.55 * var(--size));
+    top: calc(.4 * var(--size));
+    line-height: calc(.1 * var(--size));
+    transform: rotateY(360deg);
+  }
+
+  .checkbox-wrapper-5 .check input[type="checkbox"]:checked + label::after {
+    height: calc(.16 * var(--size));
+    top: calc(.55 * var(--size));
+    left: calc(1.6 * var(--size));
+    font-size: calc(.6 * var(--size));
+    line-height: 0;
+  }
+
+}
